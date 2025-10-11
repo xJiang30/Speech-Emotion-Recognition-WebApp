@@ -1,7 +1,0 @@
-tensorflow-gpu==2.10.1
-scikit-learn==1.6.1
-librosa==0.10.2
-numpy==1.24.3
-pandas==2.2.3
-matplotlib==3.9.4
-

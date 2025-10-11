@@ -1,0 +1,18 @@
+{
+  "crema": {
+    "path": "../project/Models/best_weights_crema.hdf5",
+    "labels": ["angry", "disgust", "fearful", "happy", "neutral", "sad"]
+  },
+  "ravdess": {
+    "path": "../project/Models/best_weights_ravdess.hdf5",
+    "labels": ["calm", "happy", "sad", "angry", "fearful", "disgust", "surprise", "neutral"]
+  },
+  "savee": {
+    "path": "../project/Models/best_weights_savee.hdf5",
+    "labels": ["angry", "disgust", "fearful", "happy", "neutral", "sad", "surprise"]
+  },
+  "tess": {
+    "path": "../project/Models/best_weights_tess.hdf5",
+    "labels": ["angry", "disgust", "fearful", "happy", "neutral", "sad", "surprise"]
+  }
+}
