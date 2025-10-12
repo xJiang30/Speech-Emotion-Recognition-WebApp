@@ -72,11 +72,12 @@ ffmpeg -version
 
 Start the FastAPI server:
 ```python 
-python -m uvicorn app.app:app --host 0.0.0.0 --port 8000 --reload
-
+ python -m uvicorn app.app:app --reload  
 ```
 
 Access in browser: http://127.0.0.1:8000
+
+(You can also use -port to refer specific port)
 
 ## Usage
 
