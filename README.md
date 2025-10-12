@@ -5,7 +5,7 @@ powered by **TensorFlow + FastAPI + Docker + AWS EC2**.
 
 ## Demo Preview
 
-🌐 **Live Demo:** [http://51.20.65.148/8080](http://51.20.65.148/8080)
+🌐 **Live Demo:** [http://51.20.65.148](http://51.20.65.148)
 
 &nbsp;
 
