@@ -32,7 +32,9 @@ Built with FastAPI, TensorFlow, and Librosa, deployed on AWS/Render-compatible b
 │   │   ├── predict.py          // Model loading and inference logic
 │   │   ├── feature_utils.py    // Audio feature extraction
 │   │   ├── mode_config.json    // Model paths and label maps
-│   │   └── requirement.txt     // Dependencies
+│   │   ├── requirement.txt     // Dependencies
+│   │   └── templates
+│   │       └── index.html      // Home page
 │   │ 
 │   └── README.md               // Project documentatio
 ```
