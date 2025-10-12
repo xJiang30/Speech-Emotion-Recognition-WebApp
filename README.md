@@ -77,7 +77,7 @@ Start the FastAPI server:
 
 Access in browser: http://127.0.0.1:8000
 
-(You can also use -port to refer specific port)
+(You can also use --port xxxx to refer specific port)
 
 ## Usage
 
