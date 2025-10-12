@@ -120,7 +120,7 @@ docker run -p 8080:8080 ser-app
 - Launch an Ubuntu 22.04 EC2 instance
 - SSH into the instance:
 ```bash
-ssh -i your-key.pem ubuntu@<EC2-IP>
+ssh -i your-key.pem ec2-user@<EC2-IP>
 ```
 - Install Docker:
 ```bash
