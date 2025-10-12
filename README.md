@@ -1,17 +1,22 @@
 # Speech Emotion Recognition Web App
 
 An interactive web application that performs real-time speech emotion recognition using LSTM-based deep learning models, supporting both file upload and live microphone recording.
-Built with FastAPI, TensorFlow, and Librosa, deployed on AWS/Render-compatible backend.
+powered by **TensorFlow + FastAPI + Docker + AWS EC2**.
+
+## Demo Preview
+
+🌐 **Live Demo:** [http://51.20.65.148/8080](http://51.20.65.148/8080)
+
 &nbsp;
 
 ## Features
 
-- Live Recording – Record your voice directly from browser for instant prediction
-- File Upload – Upload .wav files for batch emotion analysis
+- Record your voice directly in the browser
+- Upload `.wav` audio for prediction
 - Multi-Model Support – Switch between datasets: CREMA-D, RAVDESS, SAVEE, TESS
-- Deep Learning Powered – LSTM models trained for speech emotion classification
-- Dynamic UI – Animated results, emoji mapping by emotion, progress confidence bar
-- Deployable – Fully functional FastAPI backend, compatible with AWS EC2 or Render
+- Real-time emotion visualization with emojis
+- Confidence score animation bar
+- Deployed on AWS EC2 via Docker container
 
 
 &nbsp;
@@ -34,7 +39,7 @@ Built with FastAPI, TensorFlow, and Librosa, deployed on AWS/Render-compatible b
 │   │   ├── mode_config.json    // Model paths and label maps
 │   │   ├── requirement.txt     // Dependencies
 │   │   └── templates
-│   │       └── index.html      // Home page
+│   │       └── index.html      // Home page 
 │   │ 
 │   └── README.md               // Project documentatio
 ```
@@ -42,7 +47,32 @@ Built with FastAPI, TensorFlow, and Librosa, deployed on AWS/Render-compatible b
 
 &nbsp;
 
-## Installation
+## 🧩 Tech Stack
+
+### AI / ML
+- TensorFlow 2.10 (LSTM model)
+- Librosa (audio feature extraction: MFCC, RMS, Mel-spectrogram)
+- Scikit-learn (feature normalization, encoding)
+
+### Backend
+- FastAPI (Python async web framework)
+- Uvicorn (ASGI server)
+- Pydub + FFmpeg (audio format conversion)
+
+### Frontend
+- HTML + Bootstrap 5
+- JavaScript (fetch API + dynamic rendering)
+- Emoji-based emotion UI with animated transitions
+
+### Deployment
+- Docker containerized application
+- AWS EC2 Ubuntu instance
+- Configurable port access (`8080` by default)
+
+&nbsp;
+
+
+## Local Development Setup
 
 ### Clone the repository
 
@@ -55,6 +85,7 @@ cd Speech-Emotion-Recognition-using-LSTM/app
 
 ```python
 pip install -r requirements.txt
+pip install pydub ffmpeg-python
 ```
 
 ### Install FFmpeg (for audio conversion)
@@ -64,41 +95,74 @@ Then verify:
 ```python 
 ffmpeg -version
 ```
-&nbsp;
 
-
-
-## Run Locally
+### Run Locally
 
 Start the FastAPI server:
 ```python 
- python -m uvicorn app.app:app --reload  
+python -m uvicorn app.app:app --port 8080
+
 ```
 
-Access in browser: http://127.0.0.1:8000
+Access in browser: http://127.0.0.1:8080
 
-(You can also use --port xxxx to refer specific port)
+&nbsp;
 
-## Usage
+## Docker Deployment
 
-### Record Live Audio
-Click Start Recording, speak for a few seconds, then stop and the app automatically uploads your audio and predicts emotion.
+### build Docker Image
+docker build -t ser-app .
 
-### Upload a File
-Upload any .wav file and select a dataset (CREMA, RAVDESS, etc).
+### Run Container
+docker run -p 8080:8080 ser-app
 
-You’ll see:
+## Cloud Deployment (AWS EC2)
+- Launch an Ubuntu 22.04 EC2 instance
+- SSH into the instance:
+```bash
+ssh -i your-key.pem ubuntu@<EC2-IP>
+```
+- Install Docker:
+```bash
+sudo apt update && sudo apt install -y docker.io
+```
+- Clone the repo & build:
+```bash
+git clone https://github.com/xJiang30/Speech-Emotion-WebApp.git
+cd Speech-Emotion-Recognition-using-LSTM
+sudo docker build -t ser-app .
+sudo docker run -d -p 8080:8080 ser-app
+```
+- Access via: http://<your-EC2-IP>:8080 (In my case: http://51.20.65.148/8080)
 
-Detected Emotion 😄😠😢
+## System Architecture
 
-Confidence percentage
-
-Audio playback of your sample
+          ┌────────────────────────────────────────────┐
+          │                Frontend UI                 │
+          │  - HTML / Bootstrap                        │
+          │  - JS + Fetch API                          │
+          │  - Live Audio Recorder                     │
+          └────────────────────────────────────────────┘
+                              │
+                              ▼
+          ┌────────────────────────────────────────────┐
+          │               FastAPI Backend              │
+          │  - Audio Upload / Recording Endpoint       │
+          │  - Dynamic Model Loader (RAVDESS, CREMA…)  │
+          │  - TensorFlow LSTM Prediction              │
+          └────────────────────────────────────────────┘
+                              │
+                              ▼
+          ┌────────────────────────────────────────────┐
+          │           Deployed via Docker              │
+          │  - Runs on AWS EC2 (Ubuntu 22.04)          │
+          │  - FFmpeg + TensorFlow Runtime             │
+          └────────────────────────────────────────────┘
 
 &nbsp;
 
 ## Author
 
 #### Xin Jiang
-- jiangx15@uci.edu (University of California, Irvine)
+- Master of Computer Science @ UC Irvine
 - linkedin.con/in/xin-jiang12 (LinkedIn)
