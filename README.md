@@ -5,7 +5,7 @@ powered by **TensorFlow + FastAPI + Docker + AWS EC2**.
 
 ## Demo Preview
 
-🌐 **Live Demo:** [http://51.20.65.148](http://51.20.65.148)
+🌐 **Live Demo:** https://ser-demo.duckdns.org/
 
 &nbsp;
 
@@ -133,7 +133,7 @@ cd Speech-Emotion-Recognition-using-LSTM
 sudo docker build -t ser-app .
 sudo docker run -d -p 8080:8080 ser-app
 ```
-- Access via: http://<your-EC2-IP>:8080 (In my case: http://51.20.65.148/8080)
+- Access via: http://<your-EC2-IP>:8080
 
 ## System Architecture
 
