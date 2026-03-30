@@ -104,8 +104,6 @@ python -m uvicorn app.app:app --port 8080
 
 ```
 
-Access in browser: http://127.0.0.1:8080
-
 &nbsp;
 
 ## Docker Deployment
@@ -140,7 +138,7 @@ sudo docker run -d -p 8080:8080 ser-app
           ┌────────────────────────────────────────────┐
           │                Frontend UI                 │
           │  - HTML / Bootstrap                        │
-          │  - JS + Fetch API                          │
+          │  - JS + Fast API                           │
           │  - Live Audio Recorder                     │
           └────────────────────────────────────────────┘
                               │
@@ -156,13 +154,7 @@ sudo docker run -d -p 8080:8080 ser-app
           ┌────────────────────────────────────────────┐
           │           Deployed via Docker              │
           │  - Runs on AWS EC2 (Ubuntu 22.04)          │
-          │  - FFmpeg + TensorFlow Runtime             │
           └────────────────────────────────────────────┘
 
 &nbsp;
 
-## Author
-
-#### Xin Jiang
-- Master of Computer Science @ UC Irvine
-- linkedin.con/in/xin-jiang12 (LinkedIn)
