@@ -5,7 +5,7 @@ powered by **TensorFlow + FastAPI + Docker + AWS EC2**.
 
 ## Demo Preview
 
-🌐 **Live Demo:** https://ser-demo.duckdns.org/
+🌐 **Live Demo:** [https://ser-demo.duckdns.org/](https://speech-emotion-recognition-webapp.onrender.com)
 
 &nbsp;
 
